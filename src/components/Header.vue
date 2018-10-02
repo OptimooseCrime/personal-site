@@ -6,7 +6,7 @@
                 ADAM BASILA | WEB DEVELOPER
             </h1>
 
-            <img src="../assets/sarawww.png" width="300px" v-b-tooltip.hover title='Me with the president of the good boys club'/>
+            <img src="../assets/selfiepaper.png" width="300px"/>
          
 
         </b-col>
@@ -26,6 +26,10 @@ export default {
     .poop {
         padding: 10px;
         font-family: 'Raleway', sans-serif;
+    }
+
+    img {
+margin: 5px;
     }
 
 </style>

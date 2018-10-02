@@ -18,16 +18,14 @@
             </b-button>
             <b-modal ref="myModalRef" hide-footer title="SkiLyft">
                 <div class="d-block text-center">  
-                    <h3>Technologies used</h3>
+                    <h3> {{ tU }} </h3>
                     <img src="../assets/ReactNative.png" alt="" width=100px v-b-tooltip.hover title="React Native">
                     <img src="../assets/node.png" alt="" width=67px v-b-tooltip.hover title="Node">
                     <img src="../assets/knex.png" alt="" width=100px v-b-tooltip.hover title="Knex">
                     <img src="../assets/express.png" alt="" width=100px v-b-tooltip.hover title="Express">
                     <img src="../assets/postgresql.png" alt="" width=100px v-b-tooltip.hover title="PostgreSQL">
                     <img src="../assets/heroku.png" alt="" width=65px v-b-tooltip.hover title="Heroku">      
-                    <p class="card-text">
-                    Skilyft is a ride share app made for long distance roadtrips with original implementation to be used to ski resorts, but with applicaton to be used for routes to anywhere such as music festivals. The idea is for a rider to find a driver headed to the same location they are headed to.
-                    </p>
+                    <p class="card-text"> {{ sLInfo }} </p>
                 </div>
                 <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-btn>
             </b-modal>
@@ -50,12 +48,12 @@
                 </b-button>
                 <b-modal ref="myModalRef2" hide-footer title="Beerless Pong">
                 <div class="d-block text-center">
-                    <h3>Technologies Used</h3>
+                    <h3> {{ tU }} </h3>
                     <img src="@/assets/jscript.png" alt="" width=100px v-b-tooltip.hover title="JavaScript">
                     <img src="@/assets/express.png" alt="" width="100px" v-b-tooltip.hover title="Express">
                     <img src="@/assets/heroku.png" alt="" width=100px v-b-tooltip.hover title="Heroku">
                     <img src="@/assets/node.png" alt="" width=100px v-b-tooltip.hover title="Node">
-                    <p>A brick-breaker game that stores a highscore.</p>
+                    <p> {{ bPInfo }} </p>
                 </div>
                 <b-button href="https://beerless-pong.firebaseapp.com/" variant="primary">Play a game!
                 </b-button>
@@ -74,9 +72,16 @@
 <script>
     export default{
         name:'Projects',
-        methods: {
+        
+        data(){
+            return{
+                tU:'Technologies Used',
+                sLInfo:'Skilyft is a ride share app made for long distance roadtrips with original implementation to be used to ski resorts, but with applicaton to be used for routes to anywhere such as music festivals. The idea is for a rider to find a driver headed to the same location they are headed to.',
+                bPInfo:'A brick-breaker game that stores a highscore.'
+            }
+        },
 
-            
+        methods: {  
             showModal () {
                 this.$refs.myModalRef.show()
             },

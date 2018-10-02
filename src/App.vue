@@ -1,21 +1,26 @@
 <template>
   <div id="app">
+    <b-button-group class='links'>
+            <b-button id='email-btn' href='mailto:adamcbasila@gmail.com'>Email Me</b-button>
+            <b-button target="_blank" href='https://drive.google.com/open?id=1VzirMAccBmD8Ou0BoTmdl9SJhj_kRs_0'>Resume</b-button>
+            <b-button target="_blank" href='https://www.linkedin.com/in/badadam/'>LinkedIn</b-button>
+            <b-button id='github-btn' target="_blank" href='https://github.com/optimoosecrime'>GitHub</b-button>
+          </b-button-group> <br>
     <Header/>
-    
     <div class='routers'> 
-      
       <router-link to='About' class='find'  tag='button'>About</router-link>
       <router-link to='Projects' class='find' tag='button'>Projects</router-link>
       <router-link to='Education' class='find' tag='button'>Education</router-link>
     </div>
     <transition name="fade" enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutRight" mode="out-in">
     <router-view/>
-    <b-col>
+    <b-col class="b-container">
+      <h4 class="textstuff"><h1> {{ welcomeHeader }} </h1> {{ introP }} </h4> 
 
-    <h3 class="textstuff">Welcome to my portfolio page. A place for you to learn a little bit about myself, a few of my projects I've created (the list continues to grow, I'm enjoying a project I'm building in flutter right now), and the road that got me on the path to becoming a developer, doing what truly makes me happy... something that just a short while ago I never would have even dreamed of pursuing. Feel free to reach out to me with any questions. </h3>
-    <img src="" alt="" width="300px" v-b-tooltip.hover title="I thought I was going to be an astronaught"/>
+      <h2 class="textstuff"> {{ contactInvite }} </h2> 
+      <h2></h2>
     </b-col>
-
+   
     </transition>
 
    
@@ -45,7 +50,10 @@ export default {
   },
   data(){
     return{
-
+      welcomeHeader:'Welcome to my portfolio page.',
+      introP: 'A place for you to learn a little bit about myself, a few of the projects I\'ve created, and the road that got me on the path to becoming a developer. Where I\'m doing what truly makes me happy... something that just a short while ago I never would have even dreamed of pursuing.',
+      contactInvite: 'Feel free to contact me with feedback and questions.',
+      Thanx:' Thank you for viewing.'
     }
   },
   methods:{
@@ -64,7 +72,6 @@ export default {
   }
   #app{
     font-family: 'Raleway', sans-serif;
-
     width: inherit;
     background-image: url('./assets/stripebackground.png');
     text-align: center;
@@ -73,9 +80,11 @@ export default {
     background-attachment: fixed;
     background-position: center; 
     background-size: cover;
-    height:max-content;
+    width: 100%;
+    height: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 10px;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   #Footer{
@@ -118,14 +127,16 @@ export default {
     opacity: 1;
    }
  }
- .find{
-   color: blue;
- }
+.routers{
+  padding: 15px;
+}
 body {
   font-family: 'Raleway', sans-serif;
 }
 .textstuff{
   font-family: 'Raleway', sans-serif;
+  padding: 15px;
+  text-shadow: 0 1px black;
 
 }
 .find{
@@ -134,4 +145,12 @@ body {
   color: white;
   font-family: 'Raleway', sans-serif;
 }
+.links{
+  border-radius: 10px;
+  background-color: #7C00FF;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+
 </style>
