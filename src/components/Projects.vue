@@ -72,7 +72,7 @@
 <script>
     export default{
         name:'Projects',
-        
+
         data(){
             return{
                 tU:'Technologies Used',
@@ -98,7 +98,9 @@
     }
 </script>
 <style scoped>
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
     #Projects{
+        font-family: 'Raleway', sans-serif;  
         /* position:fixed; */
         width:inherit;
         display: flex;

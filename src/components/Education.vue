@@ -32,7 +32,10 @@
 </script>
 
 <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway');
     #Education{
+    font-family: 'Raleway', sans-serif;
+   
     /* position:fixed; */
     width:inherit;
     padding: 10px;
